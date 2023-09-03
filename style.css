@@ -1,9 +1,19 @@
+
+:root {
+  --light-color: #FFF;
+  --background-color: #111;
+  --primary-color: #3cff00;
+  --primary-color-low: #2dc200;
+  --secondary-color: #ff1100;
+  --dark-grey: #bbb;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   font-family: system-ui;
-  background-color: #111;
-  color: #ffffff;
+  background-color: var(--background-color);
+  color: var(--light-color);
 }
 
 main {
@@ -14,7 +24,7 @@ main {
 }
 
 h1 {
-  font-size: 9rem;
+  font-size: 12rem;
 }
 .container {
   display: flex;
@@ -30,7 +40,7 @@ button {
   font-size: 18px;
   height: 50px;
   width: 150px;
-  border: 3px solid #AAA;
+  border: 3px solid var(--dark-grey);
   background-color: #111;
   transition: 0.12s ease-in-out;
   margin-top: 20px;
@@ -41,15 +51,16 @@ button:not(:last-child) {
 }
 
 button:hover {
-  color: #111 ;
-  border: solid #FFF;
-  background-color: #3cff00;
+  color: var(--background-color) ;
+  border: solid var(--light-color);
+  background-color: var(--primary-color);
 }
+
 button:active {
   color: #111 ;
-  border: solid #FFF;
-  background-color: #2dc200;
-
+  border: solid var(--light-color);
+  background-color: var(--primary-color-low);
+  font-size: 17px;
 }
 
 .dev {
@@ -79,11 +90,38 @@ button:active {
   border-radius: 5px;
 }
 
+.history-container > p {
+  font-family: monospace;
+  letter-spacing: 3px;
+}
+
 #save {
   display: none;
 }
 
+#save, #reset:hover {
+  background-color: var(--background-color);
+  border-color: #bbb;
+  color: var(--light-color);
+}
+
+
+#save, #reset:active {
+  background-color: var(--background-color);
+  border-color: var(--light-color)
+}
+
+
+#decrease:hover {
+  background-color: var(--secondary-color);
+}
+
 @media screen and (max-width: 500px)  {
+
+  h1 {
+    font-size: 10rem;
+  }
+
   .history-container {
     display: flex;
     /* justify-content: space-around; */
@@ -100,15 +138,32 @@ button:active {
     text-align: center;
   }
 
-
-  #reset {
+  #reset, #save{
     order: 1;
   }
+
+  button:not(:first-child) {
+    margin-right: 5px;
+  }
+  
 }
 
+@media screen and (max-width: 304px)  {
 
-@media screen and (max-width: 210px)  {
+  h1 {
+    font-size: 9rem;
+  }
  .dev {
   display: none;
 }
+.buttons {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  text-align: center;
+}
+  #reset, #save {
+    order: 0;
+  }
 }

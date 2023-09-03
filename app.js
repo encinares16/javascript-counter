@@ -30,9 +30,7 @@ function save(){
     document.getElementById("save").style.display = "none";
     document.getElementById("reset").style.display = "inline";
     // document.getElementById("history").style.backgroundImage = "linear-gradient(to top, rgba(0, 0, 0, 0.062) 80%, rgb(0, 255, 11)55%";
-  
   } while (history.length > i);
-
 }
 
 
