@@ -20,6 +20,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -151,14 +152,13 @@ button:active {
 @media screen and (max-width: 304px)  {
 
   h1 {
-    font-size: 9rem;
+    font-size: 7rem;
   }
  .dev {
   display: none;
 }
 .buttons {
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap-reverse;
   justify-content: center;
   text-align: center;
@@ -166,4 +166,40 @@ button:active {
   #reset, #save {
     order: 0;
   }
+}
+
+#typewrite {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-family: monospace;
+  margin-top: 105px;
+}
+
+#typewrite > p span{
+  font-family: monospace;
+}
+
+.p-dev {
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typing 2s steps(20), blinker .4s step-end infinite alternate;
+}
+@keyframes blinker {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes typing {
+  from { width: 0 } 
+}
+
+#justme {
+  font-weight: 200;
+}
+
+.p-dev, .textToGenerate {
+  letter-spacing: 2px;
 }
